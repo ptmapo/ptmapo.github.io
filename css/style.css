@@ -1,3 +1,9 @@
+body {
+  background-image: url("/img/cy.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
 @-moz-keyframes spinAround {
   from {
     transform: rotate(0deg);
