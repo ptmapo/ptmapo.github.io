@@ -1,5 +1,5 @@
 // 评论issues仓库 https://ptmapo.github.io/
-var repoIssuesUrl = "https://ptmapo.github.io/";
+var repoIssuesUrl = "https://api.github.com/repos/ptmapo/ptmapo.github.io/issues";
 // 对应仓库 clientId、clientSecret 关于这两个参数的安全问题：
 var clientId = "cebfacdf9adc2964f35e";
 var clientSecret = "cc318c6112b409f50774b51ea202b26beb7ba3cb";
@@ -241,7 +241,6 @@ $(document).ready(setTimeout(function () { // 延迟1s执行，保证其余的�
         }
 
         console.clear();
-        console.log(id);
         console.log("~~~~\﻿ (•◡•) /	 欢迎光临~~~");
         console.log("~~~~唉，控制台太多报错了，呜呜呜呜~~~");
         console.log("~~~~记得有时间多来看看哦，https://1997888.xyz")

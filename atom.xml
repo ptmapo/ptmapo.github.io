@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://removeif.github.io/"/>
-  <updated>2020-06-03T04:02:33.539Z</updated>
+  <updated>2020-06-02T17:08:54.691Z</updated>
   <id>https://removeif.github.io/</id>
   
   <author>
@@ -17,39 +17,9 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>1231</title>
-    <link href="https://removeif.github.io/posts/eb89142c.html"/>
-    <id>https://removeif.github.io/posts/eb89142c.html</id>
-    <published>2020-06-03T04:02:24.711Z</published>
-    <updated>2020-06-03T04:02:33.539Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>123</title>
-    <link href="https://removeif.github.io/posts/884863d2.html"/>
-    <id>https://removeif.github.io/posts/884863d2.html</id>
-    <published>2020-06-03T04:00:08.345Z</published>
-    <updated>2020-06-03T04:00:13.327Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-    
-  </entry>
-  
-  <entry>
     <title>mysql 基础知识及DDL,DML</title>
-    <link href="https://removeif.github.io/posts/c8edb6a0.html"/>
-    <id>https://removeif.github.io/posts/c8edb6a0.html</id>
+    <link href="https://removeif.github.io/2020/06/02/mysql-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E5%8F%8ADDL-DML/"/>
+    <id>https://removeif.github.io/2020/06/02/mysql-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E5%8F%8ADDL-DML/</id>
     <published>2020-06-02T09:03:13.000Z</published>
     <updated>2020-06-02T17:08:54.691Z</updated>
     
