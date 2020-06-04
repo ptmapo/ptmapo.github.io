@@ -40,11 +40,11 @@
   </entry>
   
   <entry>
-    <title>2020-5-16 每日记录</title>
-    <link href="https://removeif.github.io/2020/06/04/diary/2020-5-16%20/"/>
-    <id>https://removeif.github.io/2020/06/04/diary/2020-5-16%20/</id>
+    <title>20200516 每日记录</title>
+    <link href="https://removeif.github.io/2020/06/04/diary/20200516%20/"/>
+    <id>https://removeif.github.io/2020/06/04/diary/20200516%20/</id>
     <published>2020-06-04T04:10:14.000Z</published>
-    <updated>2020-06-04T05:42:06.091Z</updated>
+    <updated>2020-06-04T07:13:25.456Z</updated>
     
     <content type="html"><![CDATA[<p><strong>每日记录</strong></p><a id="more"></a><p><strong>1 mybatis映射文件中的autoMapping用处是什么</strong></p><p>自动映射</p><p><strong>2  多表联查</strong></p><p><strong>3</strong></p><p><u><strong>varStatus</strong></u>是&lt;c:forEach&gt;jstl循环标签的一个属性，varStatus属性。就拿varStatus=“status”来说，事实上定义了一个status名的对象作为varStatus的绑定值。该绑定值也就是status封装了当前遍历的状态，比如，可以从该对象上查看是遍历到了第几个元素：${status.count}</p><p><strong>4</strong> 是第一次回调函数后的for循环中，如果你再次发送请求，for循环并不会停止，即使你写了同步请求也不行。</p><p>但是如果你在声明for循环变量用let后，代码会直到你请求完毕，回调函数执行完毕后，再进行下一次的循环。</p><p>这就考虑到了一个闭包的问题，如果你写var和let声明的作用域不同。</p><p><strong><u>let</u></strong> i 会以局部变量的形式传递</p><p><u><strong>var</strong></u> i 会以全局变量的形式传递</p><p>如果要想将 i 变量传递给下一层，要使用let 去声明。</p><p><strong>5 判断几个选项是否有选择一项 （校验）</strong></p><p><img src="https://oscimg.oschina.net/oscnet/up-0e25e5eb4013c6fbfb862b4e48e23b4143a.png" alt="img"></p><p><strong>6 frameset标签不能和body共存 ？？？</strong></p><p>FRAMESET 元素是 FRAME 元素的容器。HTML 文档可包含 FRAMESET 元素或 BODY 元素之一，而不能同时包含两者。</p><p><strong>7  n+1</strong></p><p> select语句的数目太多，需要频繁的访问数据库，会影响检索性能。如果需要查询n个Customer对象，那么必须执行<u>n+1次</u>select查询语句。这就是经典的n+1次select查询问题。 这种检索策略没有利用SQL的连接查询功能</p><p><strong>8， forward和redirect的区别</strong></p><p>forward 重定向:</p><p>1,重定向会改变浏览器地址栏地址</p><p>2,重定向不止可以访问服务器内的资源,还可以访问外部连接</p><p>3重定向因为是两次请求,所以重定向不能使用request来访问资源和共享数据,因为request的作用域是一次请求内,</p><p>redirect 请求转发:</p><p>1,不会改变浏览器地址栏信息</p><p> 2,只能访问服务器内部资源</p><p> 3,是一次请求.所以可以使用request共享数据 </p><p><strong>9. resultMap标签</strong></p><p><img src="https://oscimg.oschina.net/oscnet/up-877248f913d41e5733bf0aa30ddbc5077ff.png" alt="img"></p><p><strong>10  /**</strong></p><p>/* 是拦截所有的文件夹，不包含子文件夹</p><p>/** 是拦截所有的文件夹及里面的子文件夹</p>]]></content>
     
