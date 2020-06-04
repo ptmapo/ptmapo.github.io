@@ -1,2 +1,3 @@
+body {background-image: url('/img/cy.png');background-size:100%; background-repeat:no-repeat;background-attachment:fixed}
 @import "base"
 @import "helper"
