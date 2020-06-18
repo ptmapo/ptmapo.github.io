@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://ptmapo.github.io/"/>
-  <updated>2020-06-11T15:08:38.296Z</updated>
+  <updated>2020-06-17T02:36:10.579Z</updated>
   <id>https://ptmapo.github.io/</id>
   
   <author>
@@ -17,11 +17,58 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>readBook</title>
+    <title>-用最少的时间做最高效的事-</title>
+    <link href="https://ptmapo.github.io/2020/06/16/diary/Top/"/>
+    <id>https://ptmapo.github.io/2020/06/16/diary/Top/</id>
+    <published>2020-06-15T18:06:52.000Z</published>
+    <updated>2020-06-17T02:36:10.579Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="！用最少的时间做最高效的事！"><a href="#！用最少的时间做最高效的事！" class="headerlink" title="！用最少的时间做最高效的事！"></a>！用最少的时间做最高效的事！</h1>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;！用最少的时间做最高效的事！&quot;&gt;&lt;a href=&quot;#！用最少的时间做最高效的事！&quot; class=&quot;headerlink&quot; title=&quot;！用最少的时间做最高效的事！&quot;&gt;&lt;/a&gt;！用最少的时间做最高效的事！&lt;/h1&gt;
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>C语言知识小计</title>
+    <link href="https://ptmapo.github.io/2020/06/14/C,C++/C-20200614/"/>
+    <id>https://ptmapo.github.io/2020/06/14/C,C++/C-20200614/</id>
+    <published>2020-06-14T12:47:31.000Z</published>
+    <updated>2020-06-17T14:32:10.194Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="C语言知识小计"><a href="#C语言知识小计" class="headerlink" title="C语言知识小计"></a>C语言知识小计</h3><a id="more"></a><p><font style="color:gray">基础——指针前</font></p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">/* 我的第一个 C 程序 */</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"Hello, World! \n"</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p><strong>以上代码为例基础解析</strong></p><ul><li>所有的 C 语言程序都需要包含 <strong>main()</strong> 函数。 代码从 <strong>main()</strong> 函数开始执行。</li><li><strong>printf()</strong> 用于格式化输出到屏幕。<strong>printf()</strong> 函数在 <strong>“stdio.h”</strong> 头文件中声明。</li><li><strong>stdio.h</strong> 是一个头文件 (标准输入输出头文件) , <strong>#include</strong> 是一个预处理命令，用来引入头文件。 当编译器遇到 <strong>printf()</strong> 函数时，如果没有找到 <strong>stdio.h</strong> 头文件，会发生编译错误。</li><li><strong>return 0;</strong> 语句用于表示退出程序。</li></ul><p>​    </p><p>%占位符的用法 如： printf(“你的名字是 %s , 你的年龄是 %d”,name,age);</p><p>C语言中的字符串结束标志是\0</p><p>printf的各种输出方式</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"打印五个字符：%c %c %c %c %c \n"</span>, <span class="number">119</span>, <span class="number">114</span>, <span class="number">111</span>, <span class="number">111</span>, <span class="number">108</span>);</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"前面用 填充：%10d\n"</span> , <span class="number">2015</span>);</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"前面用 填充：%010d\n"</span> , <span class="number">2015</span>);</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"右对齐，保留两位  %10.2f\n"</span> ,<span class="number">3.14</span> );</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"左对齐，保留3位  %-10.3f\n"</span> ,<span class="number">3.14</span> );</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"右对齐，指数形式  %10e\n"</span> ,<span class="number">520000.0</span> );</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"左对齐，指数形式  %-10E\n"</span> , <span class="number">520000.0</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>效果：<img src="https://gitee.com/ptmapo/Img/raw/master/img/roc/20200615110812.png" alt="批注 2020-06-15 110720"></p><p>printf 函数使用 %c 打印 char 类型的字符，使用 %d 和 %u 则打印其对应的 ASCII 码（其中 %d 打印带符号数，%u 打印无符号数）。signed char 和 unsigned char 使用 hh 说明其长度。</p><h4 id="数据类型："><a href="#数据类型：" class="headerlink" title="数据类型："></a>数据类型：</h4><p>c中的布尔值是_Bool</p><p>一个字节等于八个比特位（1Byte == 8bit），但在c语言中并没有具体定义一个字节等于多少比特位，一个字节被定义为连续比特位，具体大小由实现环境决定。不过通常我们约定俗成是一个字节等于八个比特位。</p><p>*<em>C 标准只规定一个数据类型的具体尺寸（其他数据类型都是规定相对范围），那就是char 字符型，C 标准只规定 char 类型占一个字节的空间。    *</em></p><p>整型变量： C 标准规定 short &lt;= int &lt;= long &lt;= long long </p><p><strong>C 标准规范存储空间最小的是 _Bool 因为只需要容纳0和1两个数即可</strong></p><p>为了得到某个类型或某个变量在特定平台上的准确大小，您可以使用 <strong>sizeof</strong> 运算符。表达式 <em>sizeof(type)</em> 得到对象或类型的存储字节大小。</p><p>由于<strong>默认 int 是 signed</strong> 的，即带符号位的整数（可以表示负数），需要用一半的存储空间来存放负数；而 unsigned int 则是完全用于存放正数，因此 unsigned int 能保存2倍于有符号类型的正整数数据。</p><p><strong>用 64 位来存放 long long 的值 ，取unsigned long long，它可以表示的最大值是2^64 -1，所以可以最大可以存放一个20位的十进制整数</strong></p><h4 id="进制转换举栗"><a href="#进制转换举栗" class="headerlink" title="进制转换举栗"></a>进制转换举栗</h4><p><strong>请写出以下二进制数（补码）对应的十进制数。</strong><br> A. 0000 1100 -&gt; 2^3 + 2^2 = 8 + 4 = 12<br> B. 1100 1100 –&gt; -2^7 + 2^6 + 2^3 + 2^2 = -128 + 64 + 8 + 4 = -52<br> C. 1010 1010 –&gt; -2^7 + 2^5 + 2^3 + 2 = -128 + 32 + 8 + 2 = -86<br> D. 1111 1111 -&gt; -2^7 + 2^6 + 2^5 + 2^4 + 2^3 + 2^2 + 2 + 1 = -1<br> E. 1000 0000 –&gt; -2^7 = -128</p><p>带符号数在内存中以补码的形式保存，正数的补码是其二进制本身，负数则通过对其绝对值的二进制取反加一计算得到（补码）</p><p>-8 -&gt; 1000 1000 –&gt; 1111 0111 –&gt; 1111 1000</p><p>-126 -&gt; -128 + 2 -&gt; 1000 0000 + 0000 0010 -&gt; 1000 0010</p><p>对于逻辑与和逻辑或采用<strong>短路求值</strong>方式。</p><h4 id="字符与字符串"><a href="#字符与字符串" class="headerlink" title="字符与字符串"></a>字符与字符串</h4><p>C语言中，最小的整数类型是char。（虽然 char 是字符类型，但它事实上是用于存放整数，因此属于整数类型。）</p><p>标准 ASCII 字符表使用 7 位二进制数来表示所有的大写和小写字母，数字 0 到 9、标点符号，以及在美式英语中使用的特殊控制字符；数字 0<del>9 对应的十六进制 ASCII 值分别是 30</del>39。</p><p>大写字母对应的 ASCII 值第 6 位置 1 则变成对应的小写字母，反之亦然。例如：大写字母 A 的二进制 ASCII 值是 0100 0001，对应的小写字母 a 的二进制则是 0110 0001。此规则适用于所有大小写字母的相互转换</p><p>一个字符串在内存中占有多少字节？ 字符串的长度加一，因为字符串最后需要加一个‘\0’字符表示结束</p><p>如果用char name[10] = “xiaomu”; 定义字符串；则其变量name在内存中的储存形式是：’x’，’i’，’a’，’o’，’m’，’u’，’\0’，’\0’，’\0’，’\0’  声明了10个字节但是只需7个（包括结尾\0），因此多余的空间用‘\0’进行填充。如果</p><h4 id="scanf-s"><a href="#scanf-s" class="headerlink" title="scanf_s()"></a>scanf_s()</h4><p>教材中的scanf()，在目前Visual Studio版本中已经弃用；</p><p>scanf_s() 的功能虽然与scanf() 相同，但却比 scanf() 安全，因为 scanf()在读取字符串时不检查边界，可能会造成内存泄露”；而scanf_s() 在读取数据的时候会检查边界，如果输入的数据达到了所请求的内存空间，则不会再读入数据。</p><h4 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h4><p>求余运算符两边要求均为<strong>整形</strong>。</p><p>赋值运算符的结合性是自右向左的；</p><p>为什么a = 0 &amp;&amp; 1 = b;编译会报错？  少打了一个等号（=），使得表达式先计算逻辑运算符的值为 0 &amp;&amp; 1 结果为假（0），便出现了 0 = b 这样错误的赋值语句（我们无法给一个常数赋值）</p><p><strong>count != 0 &amp;&amp; sum/count</strong>   该表达式使用逻辑与（&amp;&amp;）来确保 sum/count 的除数不为 0。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;C语言知识小计&quot;&gt;&lt;a href=&quot;#C语言知识小计&quot; class=&quot;headerlink&quot; title=&quot;C语言知识小计&quot;&gt;&lt;/a&gt;C语言知识小计&lt;/h3&gt;
+    
+    </summary>
+    
+    
+      <category term="C" scheme="https://ptmapo.github.io/categories/C/"/>
+    
+      <category term="知识小记" scheme="https://ptmapo.github.io/categories/C/%E7%9F%A5%E8%AF%86%E5%B0%8F%E8%AE%B0/"/>
+    
+    
+      <category term="C" scheme="https://ptmapo.github.io/tags/C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>如何阅读一本书</title>
     <link href="https://ptmapo.github.io/2020/06/11/other/readBook/"/>
     <id>https://ptmapo.github.io/2020/06/11/other/readBook/</id>
     <published>2020-06-11T14:51:09.000Z</published>
-    <updated>2020-06-11T15:08:38.296Z</updated>
+    <updated>2020-06-11T15:22:29.277Z</updated>
     
     <content type="html"><![CDATA[<h2 id="《如何阅读一本书》读书笔记"><a href="#《如何阅读一本书》读书笔记" class="headerlink" title="《如何阅读一本书》读书笔记"></a>《如何阅读一本书》读书笔记</h2><a id="more"></a><p>本书的开篇指出了任何一种阅读都是一种活动，因此必须要有一些主动的活力。很多人在阅读的时候，常常没读多久就开始出现双眼停滞、头脑昏睡的状况，这种精神不济的状态根本无法将阅读进行下去。作者认为，人们之所以出现这种现象，是因为阅读缺乏主动性。</p><p>完全被动的阅读只会越读越疲惫，越读越乏味，直至放弃阅读。所以，预备开始阅读的人首先要认识到的是：<strong>阅读是一件主动的事情，阅读越主动，效果越好。</strong></p><p>既然阅读是一种活动，那么也必有活动的目的。<strong>阅读的目的可分为两种：第一种是为获得资讯而读，第二种是为求得理解而读。</strong></p><p>阅读与自身知识水平相当的书，那么阅读的目的就只是为了获得这本书所载录的信息而已。阅读高于自身知识水平的书，并试图读懂读透它，向自己现有的理解力发起挑战，则是阅读的另一种目的——提升理解力。</p><p>这本书所针对的读者就是那些想把读书的主要目的当作是增进理解能力的人而写。<strong>在没有任何外力的帮助的情况下，只凭着内心的力量，玩味着眼前的字句，慢慢地提升自己，从只有模糊的概念到更清楚地理解为止。以一己之力来提升自我，从粗浅的了解推进到深入的理解，认知自我破茧而出。</strong></p><p>好的阅读者应该具备敏锐的观察力、灵敏可靠的记忆、想象的空间，以及训练有素的分析、省思能力。然而并不是所有阅读的人都拥有这些阅读能力，但好在这些能力和技巧是可以通过学习和训练而获得的，答案和秘诀就藏在这本阅读圣经里。</p><h3 id="01-如何把握一本书的基础架构并了解全书内容"><a href="#01-如何把握一本书的基础架构并了解全书内容" class="headerlink" title="01.如何把握一本书的基础架构并了解全书内容"></a><strong>01.如何把握一本书的基础架构并了解全书内容</strong></h3><p>《如何阅读一本书》将阅读分为四个层次，分别是：<strong>基础阅读、检视阅读、分析阅读、主题阅读</strong>。之所以称作层次而不是方法或类别，是因为四个层次之间呈递进与包含的关系。也就是说，<strong>阅读的层次是渐进的</strong>。第二层阅读是建立在第一层阅读的基础上，而第三层由建立在第二层之上，而最高的层次第四层则包括了之前的所有阅读层次。</p><p>首先来了解阅读的第一个层次：基础阅读。这是阅读层次中最基础的一层，以识文断字为主要目的，阅读时能够清晰的知道作者是在说什么。<strong>这本书所针对的人群是已经至少具备基础阅读能力的阅读者。</strong></p><p>第二个阅读层次是<strong>检视阅读。目的是在最短的时间内，对全书最好最重要的内容快速的阅读并掌握。</strong>这一层次是建立在读者已经具备第一层阅读能力的基础上，以增进理解力为目标的读者必须掌握这个层次的阅读方法。</p><p>检视阅读有两个阶段：</p><p><strong>第一个阶段是有系统的略读或粗读，用最经济的方法了解一本书的架构，判断这本书值不值得花时间仔细阅读。</strong>拿到一本书，首先翻看书籍的书名页、 序、目录页、索引、出版者的介绍这些内容。挑选几个与主题相关的篇章阅读，留意主题的基本脉动，以及书籍结尾记载着作者自认为既新又重要的观点的三四页。</p><p><strong>第二个阶段是粗浅的阅读，面对一本难读的书的时候，从头到尾先读完一遍，碰到不懂的地方不要停下来查询或思索，了解全书内容。</strong></p><p>在完成检视阅读的过程中，读者要完成<strong>四个问题</strong>：</p><p>（1）<strong>这本书到底在谈些什么？</strong>找出这本书的主题，作者如何依次发展这个主题，如何逐步从核心主题分解出从属的关键议题来。</p><p>（2）<strong>作者详细说了什么，怎么说的？</strong>找出主要的想法、声明与论点。这些组合成作者想要传达的特殊讯息。</p><p>（3）<strong>这本书说得有道理吗？是全部有道理，还是部分有道理？</strong>阅读并理解了一本书后知道了作者的想法，还应该为这本书做个自己的判断。</p><p>（4）<strong>这本书跟你有什么关系？</strong>如果这本书给了你一些资讯，就要问问这些资讯有什么意义。如果这本书启发了你，就要找出相关的、更深的含意或建议，获得更多的启示。</p><p>回答完这四个问题，检视阅读的两个步骤就已经完成了。这时，关于一本书的基础架构和整体内容，你也已能做到心中有数了。但这还不是终点，没有经过阅读的第三个层次分析阅读，就不算真正理解一本书。</p><h3 id="02-如何通过分析阅读读透一本书"><a href="#02-如何通过分析阅读读透一本书" class="headerlink" title="02.如何通过分析阅读读透一本书"></a><strong>02.如何通过分析阅读读透一本书</strong></h3><p>很多人在阅读会遇到无论花多长时间阅读、无论读的有多认真，却仍是无法参透一本书到底在讲什么的境况。这就好像是一个近在身边的人，无论花多长时间与其相处，却总是无法看透他。其实这并不是人难懂、书难懂，而是我们缺乏看透的能力。想要读透一本书，需要达到阅读的第三个层次——分析阅读。</p><p><strong>分析阅读，目的是在较长的阅读时间内，对全书最好最重要的内容细嚼慢咽，反复咀嚼其深意。</strong>分析阅读就是全盘的阅读、完整的阅读，或是说优质的阅读，是读者能做到的最好的阅读方式。</p><p>分析阅读共分为三个阶段，在这个层次的阅读中，读者要紧抓住一本书，一直要读到这本书成为自己的一部分为止。</p><p><strong>分析阅读的第一阶段：找出一本书在谈些什么。</strong></p><p>（1）<strong>依照书的种类与主题来分类。</strong>你一定要知道自己在读的是哪一类书，最好在开始阅读之前就知道。一开始时，用检视阅读先浏览一遍，初步了解这本书。</p><p>（2）<strong>使用最简短的文字说明整本书在谈些什么。</strong>找出这本书的主题或重点，揣测这个作者想要做什么，说出本书的大意。</p><p>（3）<strong>将主要部分按顺序与关联性列举出来。</strong>将全书的大纲列举出来，并将各个部分的大纲也列出来。这一条强调了一本书的复杂性。一本完整的书也是一个完整的个体，当读者掌握了一本书的整体性时，便会立刻抓住其中重要的部分。而这些重要部分同样需要透视阅读，深入了解。</p><p>（4）<strong>确定作者想要解决的问题。</strong>一本书的作者在开始写作时一定是先有一个或多个问题的，而这本书的内容就是对于这些问题的答案。读者的责任就是从书中精确地找出这些问题来，并按照重要性整合出顺序。</p><p>这一阶段，读者可以回答对一本书提出来的第一个问题：这本书大体上来说是在谈论什么。</p><p><strong>分析阅读的第二阶段：诠释一本书的内容规则。</strong></p><p>（5）<strong>诠释作者的关键字，与他达成共识。</strong>找出那些举足轻重的单字，并确认这些单字在使用时的意义，诠释内容与信息。譬如作者用特殊方法来运用的一些字，或是作者强调的字，以及一些专门用语等。</p><p>（6）<strong>由最重要的句子中，抓住作者的重要主旨。</strong>最重要的句子是在整个论述中，阐述作者判断的部分。还有些重要的句子会出现在段落开头或结尾，类似学生时代学习的找文章的主旨句。</p><p>（7）<strong>知道作者的论述是什么，从内容中找出相关的句子，再重新架构出来。</strong>找出书中说明重要论述的段落，从相关段落中整理出前后顺序。</p><p>（8）<strong>找出作者的解答。</strong>确定作者已经解决了哪些问题，还有哪些是没解决的。再判断哪些是作者知道他没解决的问题。</p><p>这一阶段，读者可以回答对一本书提出来的第二个问题：这本书详细的内容是什么？作者是如何写出来的？</p><p><strong>分析阅读的第三阶段：像是沟通知识一样地评论一本书的规则。</strong></p><p>阅读一本书是作者与读者之间的一场对话。读者对作者所教导的内容做出判断和评论，值得表扬或是提出批评。最能学习的读者，也就是最能批评的读者。读者必须懂得如何判断一本书，能在最后对一本书提出回应，对于作者所讨论的问题，努力整理出自己的想法。</p><p><strong>A．智慧礼节的一般规则</strong></p><p>（9）<strong>除非你已经完成大纲架构，也能诠释整本书了，否则不要轻易批评。</strong>在你说出：“我读懂了!”之前，不要说你同意、不同意或暂缓评论。同意或不同意都需要花心力来判断，而不是随意地盲目赞同或无礼批判。</p><p>（10）<strong>不要争强好胜，非辩到底不可。</strong>当你不同意作者的观点时，要理性地表达自己的意见，不要无理地辩驳或争论。此外，读者还应该为自己的观点找出理由来支撑。</p><p>（11）<strong>在说出评论之前，你要能证明自己区别得出真正的知识与个人观点的不同。</strong>尊重知识与个人观点的不同，在作任何评断之前，都要找出理论基础。</p><p><strong>B．批评观点的特别标准</strong></p><p>当读者读懂了一本书，但是却不同意作者时，读者也可以不带偏见的就书中不认同作者的部分做出辩论。书中提出了四种站在作者对立角度来评论一本书的方法，在提出这四种评论时，读者应避免陷入情绪化或偏见的状态。</p><p>（12）<strong>证明作者的知识不足。</strong>意思是指作者缺少某些与他想要解决的问题相关的知识。</p><p>（13）<strong>证明作者的知识错误。</strong>意思是指作者的理念不正确，比如缺乏知识。</p><p>（14）<strong>证明作者不合逻辑。</strong>意思是指作者的推论荒谬，比如缺乏连贯性，或是前后矛盾。</p><p>（15）<strong>证明作者的分析与理由是不完整的。</strong>意思是指作者并没有解决他一开始提出来的所有问题，或是并没能善用他手边的资料，没有看出看出其间的含意与纵横交错的关系。</p><p>在提出这些评论之前，读者要注意的是，一本书不可能所有的内容都是知识不足或知识有误，也不可能全部内容都不合逻辑。要做出批评评论的读者要指出作者存在的问题，并为自己所说的话提出理由。</p><p>这个阶段，读者可以回答对一本书提出来的第三个与第四个问题：这是真实的吗？有意义吗？</p><p>运用分析阅读三个阶段所提出的这些方法和规则，仔细地阅读一本书，而不是浮于表面地阅读大量的书，就是一个好读者能达到的理想境界了。</p><p>当然，许多书都值得精读。但有更多的书只要浏览一下就行了。要成为一个好读者，就要懂得依照一本书的特质，运用不同的阅读技巧来阅读。</p><h3 id="03-阅读的最终目标：主题阅读"><a href="#03-阅读的最终目标：主题阅读" class="headerlink" title="03.阅读的最终目标：主题阅读"></a><strong>03.阅读的最终目标：主题阅读</strong></h3><p>阅读的最后也是最高的层次是主题阅读，即同时阅读数本讲述某种相似概念的书籍，总结归纳比较其中的概念，并从中提出超越这些数本中知识的新的想法。<strong>这是所有阅读中最复杂也最系统化的阅读。</strong></p><p>在做主题阅读时，阅读者会读很多本书，列举出这些书之间相关之处，提出一个所有书都谈到的主题。借助这些书籍，主题阅读者要架构出一个或许在哪一本书里都没提过的主题分析。因此，<strong>主题阅读是最主动、最花费力气的一种阅读，但也是收效最大的一种阅读。</strong></p><p>主题阅读中分为两个阶段：</p><p>一个是<strong>准备阶段的观察研究</strong>，针对你要研究的主题，设计一份试验性的书目，这时可以参考图书馆目录、专家的建议与书中的书目索引。浏览这份书目上所有的书，确定哪些与主题相关，并就这个主题建立起清楚的概念。</p><p>这是做主题阅读的准备工作，对一个特定的问题来说，所牵涉的绝不是一本书而已。因此，在开始之前要先确定好准备研究哪几本书。</p><p>另一个阶段就是<strong>正式进入主题阅读</strong>了，开始阅读第一阶段收集到的所有书籍。在这个阶段，前面提到的阅读第二层次——检视阅读，就是读者在做主题阅读时主要的工具或手段了。</p><p>（1）<strong>找到相关的章节。</strong>在主题阅读中，所确立的主题才是基本的重点，而不是所阅读的书。在这里，阅读的目的是解决问题，而非单纯的阅读这本书。因此，主题阅读的第一步应该是用检视阅读法确定好与主题相关的章节。</p><p>（2）<strong>带引作者与你达到共识。</strong>这一步应该由你来建立其共识，也就是说强迫作者使用你的语言，而不是他的语言。这套语言要能够帮助我们了解所有的作者，并能解决我们的问题。</p><p>（3）<strong>厘清问题。</strong>列出一些可以把我们的问题说得比较明白的问题，然后让作者来回答这些问题。问题的顺序与主题有关，内容涉及从正在研究的概念或现象，到这些概念或现象是如何被发现或表现出来的，最后到前面的这些问题会产生怎样的影响。在这一步，所有的作者，都应该能对这些问题做出回答。尽管答案可能不会相同，但这正也是后续一步所要做的事情。</p><p>（4）<strong>界定议题。</strong>将作者针对各个问题的不同意见整理陈列在各个议题之旁。各个作者之间或之中，不见得一定存在着某个议题。有时候，需要针对一些不是作者主要关心范围的事情，把他的观点解读，才能建构出这种议题。</p><p>（5）<strong>分析讨论。</strong>把问题和议题按顺序排列，以求突显主题。将比较有共通性的议题，放在比较没有共通性的议题之前。各个议题之间的关系也要清楚地界定出来。</p><p>至此，主题阅读就算完成了。前面说过，主题阅读是最为主动的阅读。阅读者基于某种困惑或是亟待解决的问题，主动的向书本求索答案。而这也就是将阅读当作了一种处世指南，用于指导我们的人生航路。</p><p>有一种很古老的测验，目的是帮人们找出对自己而言最有意义的书目。测验是这样的：如果你被警告将在一个无人荒岛度过余生，或至少很长的一段时间，而假设你有时间作一些准备，可以带一些实际有用的物品到岛上，还能带十本书去，你会选哪十本？</p><p>列这样一份书单其实是很有指导性的，因为可以帮助你发现自己最想一读再读的书是哪些。当你想象自己被隔绝在一个没有娱乐、没有资讯、没有可以理解的一般事物的世界时，比较起来你是否会对自己了解得更多一点？这个与世隔绝的岛上没有电视也没有收音机，更没有图书馆，只有你跟十本书。</p><p>在某种程度上，现实中的我们跟被放逐到荒岛上的人没什么两样。我们面对的挑战都是如何找出内在的资源，过更美好的人类生活的挑战。</p><p>《如何阅读一本书》的作者认为，<strong>身体的成长是有限制的，心智的发展却没有限制。心智不会因为到了某个年纪死就停止成长，只有当大脑失去活力，僵化了，才会失去了增加技巧与理解力的力量。</strong></p><p>主动的阅读，不只是对阅读本身有用，也不只是对我们的工作或事业有帮助，更能帮助我们的心智保持活力与成长。</p><p><strong>任何一种超越基础阅读的阅读层次，其核心在于读者要努力提出问题，然后尽可能地找出答案。这是主动阅读中最重要的原则。</strong></p><p>以增进理解力为目的读书，就要真正读懂一本书。要真正完全读懂一本书，就必须把这本书变成自己的一部分才行。</p><p>阅读是一辈子的事情，什么时候开始都不算晚，最重要的是开始</p>]]></content>
     
@@ -60,9 +107,9 @@
       <category term="ssm" scheme="https://ptmapo.github.io/categories/java/ssm/"/>
     
     
-      <category term="java" scheme="https://ptmapo.github.io/tags/java/"/>
-    
       <category term="ssm" scheme="https://ptmapo.github.io/tags/ssm/"/>
+    
+      <category term="java" scheme="https://ptmapo.github.io/tags/java/"/>
     
       <category term="MyBatisPlus" scheme="https://ptmapo.github.io/tags/MyBatisPlus/"/>
     
@@ -139,9 +186,9 @@
       <category term="ssm" scheme="https://ptmapo.github.io/categories/%E6%AF%8F%E6%97%A5%E8%AE%B0%E5%BD%95/ssm/"/>
     
     
-      <category term="ssm" scheme="https://ptmapo.github.io/tags/ssm/"/>
-    
       <category term="每日记录" scheme="https://ptmapo.github.io/tags/%E6%AF%8F%E6%97%A5%E8%AE%B0%E5%BD%95/"/>
+    
+      <category term="ssm" scheme="https://ptmapo.github.io/tags/ssm/"/>
     
   </entry>
   
