@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://ptmapo.github.io/"/>
-  <updated>2020-08-01T09:26:51.835Z</updated>
+  <updated>2020-08-13T09:58:47.631Z</updated>
   <id>https://ptmapo.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>xx05电影x</title>
+    <link href="https://ptmapo.github.io/2020/08/12/android/xx05%E7%94%B5%E5%BD%B1x/"/>
+    <id>https://ptmapo.github.io/2020/08/12/android/xx05%E7%94%B5%E5%BD%B1x/</id>
+    <published>2020-08-12T09:44:01.000Z</published>
+    <updated>2020-08-13T09:58:47.631Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="xx05电影网逆向分析"><a href="#xx05电影网逆向分析" class="headerlink" title="xx05电影网逆向分析"></a>xx05电影网逆向分析</h2><a id="more"></a><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">网络繁忙的可能性有两种：一可能是未设置延迟造成两个数据提交间隔过快不合理；二是可能缺少一条前置的访问数据。</span><br><span class="line">此app则需要提前访问一条数据解决繁忙问题：（http:&#x2F;&#x2F;m.mapps.m1905.cn&#x2F;Recommendindex&#x2F;home）</span><br></pre></td></tr></table></figure><p><img src="https://gitee.com/ptmapo/Img/raw/master/img/roc/20200812184031.png" alt="image-20200812183847671"></p><h4 id="request"><a href="#request" class="headerlink" title="request"></a>request</h4><p>由图 对User/sendVer进行搜索找到如下</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">a</span><span class="params">(String arg7, <span class="keyword">int</span> arg8)</span> </span>&#123;</span><br><span class="line">       StringBuilder v1 = <span class="keyword">new</span> StringBuilder();</span><br><span class="line">       v1.append(<span class="string">"http://m.mapps.m1905.cn/User/sendVer"</span>);</span><br><span class="line">       v1.append(<span class="string">"?request="</span>);</span><br><span class="line">       <span class="keyword">try</span> &#123;</span><br><span class="line">           v1.append(URLEncoder.encode(aay.b(<span class="string">"mobile="</span> + arg7 + <span class="string">"&amp;templateid="</span> + arg8), <span class="string">"UTF-8"</span>));</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="keyword">catch</span>(UnsupportedEncodingException v0) &#123;</span><br><span class="line">           v0.printStackTrace();</span><br><span class="line">       &#125;</span><br></pre></td></tr></table></figure><p>进入aay.b后</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">b</span><span class="params">(String arg4)</span> </span>&#123;</span><br><span class="line">        String v0_2;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            SecretKey v0_1 = SecretKeyFactory.getInstance(<span class="string">"DESede"</span>).generateSecret(<span class="keyword">new</span> DESedeKeySpec(aay.key.getBytes()));</span><br><span class="line">            Cipher v1 = Cipher.getInstance(<span class="string">"DESede/CBC/PKCS5Padding"</span>);</span><br><span class="line">            v1.init(<span class="number">1</span>, ((Key)v0_1), <span class="keyword">new</span> IvParameterSpec(aay.iv.getBytes()));</span><br><span class="line">            v0_2 = aau.a(v1.doFinal(arg4.getBytes()));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">catch</span>(Exception v0) &#123;</span><br><span class="line">            v0_2 = <span class="string">""</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> v0_2;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure><p>得知是3DES加密并且获取了key和iv值；对请求链接加密内容jYgPer7AuEo3v%2BQTW6EduEpNaqgpgocriV8lbJ24PdQ%3D进行url解码得到jYgPer7AuEo3v+QTW6EduEpNaqgpgocriV8lbJ24PdQ=，然后再进行des解码</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">此前放入CryptoJS.min.js加密库</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params">data</span>)</span>&#123;</span><br><span class="line"><span class="keyword">var</span> key = CryptoJS.enc.Utf8.parse(<span class="string">"iufles8787rewjk1qkq9dj76"</span>);</span><br><span class="line"><span class="keyword">var</span> iv = CryptoJS.enc.Utf8.parse(<span class="string">"vs0ld7w3"</span>);</span><br><span class="line"><span class="keyword">var</span> res = CryptoJS.TripleDES.decrypt(data,key,&#123;</span><br><span class="line">iv: iv,</span><br><span class="line">mode: CryptoJS.mode.CBC,</span><br><span class="line">padding: CryptoJS.pad.Pkcs7</span><br><span class="line">&#125;);</span><br><span class="line"><span class="keyword">return</span> res.toString(CryptoJS.enc.Utf8);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>得到mobile=此处手机号&amp;templateid=1</p><p>响应文本内容也可用此方法进行解密。</p><h4 id="key"><a href="#key" class="headerlink" title="key"></a>key</h4><p>搜索key值找到如下</p><p><img src="https://gitee.com/ptmapo/Img/raw/master/img/roc/20200813175038.png" alt="img"></p><p>进入方法发现abh.a()是一个md5加密，再进去找abb.c()的值</p><p><img src="https://gitee.com/ptmapo/Img/raw/master/img/roc/20200813175357.png" alt="image-20200813175350714"></p><p>发现此方法获取的是did的值，于是key的值便是对did+m1905_2014的MD5加密值</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;xx05电影网逆向分析&quot;&gt;&lt;a href=&quot;#xx05电影网逆向分析&quot; class=&quot;headerlink&quot; title=&quot;xx05电影网逆向分析&quot;&gt;&lt;/a&gt;xx05电影网逆向分析&lt;/h2&gt;
+    
+    </summary>
+    
+    
+      <category term="Android逆向" scheme="https://ptmapo.github.io/categories/Android%E9%80%86%E5%90%91/"/>
+    
+      <category term="协议分析" scheme="https://ptmapo.github.io/categories/Android%E9%80%86%E5%90%91/%E5%8D%8F%E8%AE%AE%E5%88%86%E6%9E%90/"/>
+    
+    
+      <category term="Android逆向" scheme="https://ptmapo.github.io/tags/Android%E9%80%86%E5%90%91/"/>
+    
+      <category term="协议分析" scheme="https://ptmapo.github.io/tags/%E5%8D%8F%E8%AE%AE%E5%88%86%E6%9E%90/"/>
+    
+  </entry>
   
   <entry>
     <title>-我们自己才是我们需要不断去比较和竞争的对象-</title>
